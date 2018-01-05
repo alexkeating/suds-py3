@@ -69,6 +69,7 @@ class HttpTransport(Transport):
         url = request.url
         msg = request.message
         headers = request.headers
+        from IPython import embed; embed()
         try:
             u2request = u2.Request(url, msg, headers)
             self.addcookies(u2request)
