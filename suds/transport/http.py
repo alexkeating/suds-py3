@@ -69,7 +69,6 @@ class HttpTransport(Transport):
         url = request.url
         msg = request.message
         headers = request.headers
-        from IPython import embed; embed()
         try:
             u2request = u2.Request(url, msg, headers)
             self.addcookies(u2request)
@@ -113,6 +112,7 @@ class HttpTransport(Transport):
         """
         tm = self.options.timeout
         url = self.u2opener()
+        from IPython import embed; embed()
         if self.u2ver() < 2.6:
             socket.setdefaulttimeout(tm)
             return url.open(u2request)
